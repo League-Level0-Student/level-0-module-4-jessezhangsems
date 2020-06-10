@@ -1,5 +1,7 @@
 package _02_boolean._1_sleepy_head;
 
+import java.awt.Color;
+
 import javax.swing.JOptionPane;
 import org.jointheleague.graphical.robot.Robot;
 
@@ -34,8 +36,17 @@ public class SleepyHead {
 
 		boolean passedExam;
 		// Write code to ask the user what percentage they scored in their last exam
-
+String input1=JOptionPane.showInputDialog("What percentage did you score in the last exam??????????????");
 		
+		int Mr_Cody = Integer.parseInt(input1);
+		if(Mr_Cody>=70) {
+			passedExam=true;
+					JOptionPane.showMessageDialog(null, "Lol, you passed the exam. CONGRATS!!! ");
+		}
+		else {
+			passedExam=false;
+					JOptionPane.showMessageDialog(null, "Lol, better luck next time. ");;
+		}
 		// If they scored more than 70, they passed the exam.
 		// Set the boolean passedExam based on their score.
 		
@@ -53,6 +64,7 @@ public class SleepyHead {
 			String gameOver = JOptionPane.showInputDialog("is game over");
 			if (gameOver.equalsIgnoreCase("yes"))
 				gameIsOver = true;
+			JOptionPane.showMessageDialog(null, "GAME IS OVER.");
 			
 			// If they answer "yes", change gameIsOver to true
 
@@ -81,6 +93,16 @@ public class SleepyHead {
 	
 	static void drawRedSquare() {
 		Robot rob = new Robot();
+		rob.penDown();
+		rob.setSpeed(100);
+		rob.setPenColor(Color.red);
+		rob.move(50);
+		rob.turn(90);
+		rob.move(50);
+		rob.turn(90);
+		rob.move(50);
+		rob.turn(90);
+		rob.move(50);
 		// Complete the rest of this method
 	}	
 }
